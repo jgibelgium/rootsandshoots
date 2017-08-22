@@ -1,0 +1,56 @@
+#vexTabel {
+    position: relative;
+    width: 100%;/*van de container*/
+    height: auto;
+    overflow: auto;/*If overflow is clipped, a scroll-bar should be added to see the rest of the content*/
+    margin: 0 auto 16px;
+}
+
+
+#vexTabel thead th {
+    height: 32px;
+    /*font-weight: bold niet nodig; HTML5 zorgt hier wellicht reeds voor*/
+    text-align: left; /*HTML5 centreert*/
+}
+
+#vexTabel tbody td {
+    height: 32px;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+
+.Id {
+    width: 10%;
+}
+
+.Lener, .Verlener, .DatumTerug, .DueDate {
+    width: 15%;
+}
+
+.Actie {
+    width: 10%;
+}
+
+#warningDeletion {
+    display: none;
+}
+
+form {
+    display: inline-block;
+}
+
+form > input {
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+

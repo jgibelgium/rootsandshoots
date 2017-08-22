@@ -1,0 +1,20 @@
+/*
+Theme Name: 2016 child
+Template: twentysixteen
+Author: RE
+Version: 1.0
+*/
+
+@import url("../twentysixteen/style.css");
+
+#lgmenu-chooser {
+list-style: none;
+float: right;
+}
+
+#lgmenu-chooser li {
+display: inline;
+margin-left: 0.625em;
+}
+
+.site-info {display: none;}

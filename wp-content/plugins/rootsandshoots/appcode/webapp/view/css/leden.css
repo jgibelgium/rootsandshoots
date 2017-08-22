@@ -1,0 +1,41 @@
+#ledenTabel {
+    position: relative;
+    width: 100%;/*van de container*/
+    height: auto;
+    overflow: auto;/*If overflow is clipped, a scroll-bar should be added to see the rest of the content*/
+    margin: 0 auto 16px;
+    border-radius: 4px;/*pakt niet, ook niet met !important*/
+}
+
+
+#ledenTabel thead th {
+    height: 32px;
+    /*font-weight: bold niet nodig; HTML5 zorgt hier wellicht reeds voor*/
+    text-align: left; /*HTML5 centreert*/
+}
+
+#ledenTabel tbody td {
+    height: 32px;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+
+.Cel {
+    width: 22.5%;
+}
+
+.Actie {
+    width: 10%;/*vaste kolombreedte vermijdt variabele breedte calculatie*/
+}
+
+#warningDeletion {
+    display: none;
+}
+
+
+
+
+
+
+

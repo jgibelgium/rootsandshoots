@@ -1,0 +1,167 @@
+
+.form-horizontal {
+    margin-left: 25%;
+    margin-bottom: 16px;
+    width: 50%;
+    background-color: transparent;
+    border-color: #000;
+    border-style: solid;
+    border-width: 1px;
+    padding-top: 16px;
+}
+
+.control-group {
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 0;
+}
+
+.control-label {
+    cursor: pointer;
+    float: left;
+    width: 160px;
+    text-align: right;
+    text-transform: uppercase;
+    padding-top: 5px;
+    margin-bottom: 5px;
+    margin-bottom: 5px;
+    line-height: 20px;
+    color: #333333;
+}
+
+.controls {
+     font-size: 14px;
+     line-height: 20px;
+     margin-left: 180px;/*label zit in de linkermargin*/
+}
+
+.controls > input {
+    width: 206px;
+    padding: 4px 6px;
+    vertical-align: middle;
+    line-height: 20px;
+    color: #555555;
+    background-color: #fff;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.75);/*inset: wekt indruk dat box achter canvas staat*/
+    transition: border linear 0.2s, box-shadow linear 0.2s;
+    /*transition heeft 4 eign: property / duration / timing function / delay */
+}
+
+.controls > textarea {
+    padding: 4px 6px;
+    vertical-align: middle;
+    line-height: 20px;
+    color: #555555;
+    background-color: #fff;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.75);/*inset: wekt indruk dat box achter canvas staat*/
+    transition: border linear 0.2s, box-shadow linear 0.2s;
+    width: 95% !important;/*overrides adamos theme*/
+}
+
+.controls > select {
+    width: 206px;
+    margin: 0;/*in files.css niet op 0 gezet*/
+    padding: 4px 6px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    color: #555555;
+    background-color: #fff;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.75);/*inset: wekt indruk dat box achter canvas staat*/
+    transition: border linear 0.2s, , box-shadow linear 0.2s;
+    vertical-align: middle;
+    line-height: 20px;
+}
+
+.controls > div > input[type="checkbox"] {
+    margin: 0;/*in files.css niet op 0 gezet*/
+    padding:  0;/*in files.css niet op 0 gezet*/
+    border: 1px solid #cccccc;
+    color: #555555;
+    background-color: #fff;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+
+.controls > div > input[type="radio"] {
+    margin: 0;/*in files.css niet op 0 gezet*/
+    padding:  0;/*in files.css niet op 0 gezet*/
+    border: 1px solid #cccccc;
+    color: #555555;
+    background-color: #fff;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+
+.controls > div {
+    display: inline-block;
+    vertical-align: middle;
+    padding-top: 3px;
+    
+}
+
+#idHidden{
+   display: none;/*neemt geen ruimte in */ 
+}
+
+#mailMessage {
+    margin-left: 30%;
+    font-weight: bold;
+    height: 32px;
+}
+
+#btnAccountDelete {
+    position: absolute;
+    top: 20%;
+}
+
+#warningFrm1, #warningFrm2 {
+    display: none;
+}
+
+.asterisk_input:after {
+content: "\0000a0*";
+font-weight: bold;
+display: inline-block;
+vertical-align: middle;
+}
+
+
+
+.btnsave, .btnupdate, .btncancel {
+    height: 2em;
+    width: 5em;
+}
+
+#targetgroupsfieldset, #projecttypesfieldset {
+    display: inline-block;/*laat alignatie van de span met de asterisk toe*/
+    padding-top: 0.35em;
+    padding-bottom: 0.625em;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    width: 93%;
+    background-color: #fff;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.75);/*inset: wekt indruk dat box achter canvas staat*/
+    transition: border linear 0.2s, box-shadow linear 0.2s;
+}
+
+.asterisk1_input:after {
+content: "\0000a0*";
+font-weight: bold;
+display: inline-block;
+vertical-align: top;
+}
+
+
+/*btndelete en btnedit staan in files.css*/
+
+/*height omvat verticale inhoud + verticale paddings + verticale borders*/
+/*width omvat hor inhoud + hor paddings + hor borders*/    
+

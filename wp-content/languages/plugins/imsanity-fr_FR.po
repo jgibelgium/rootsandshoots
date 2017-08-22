@@ -1,0 +1,181 @@
+# Translation of Plugins - Imsanity - Stable (latest release) in French (France)
+# This file is distributed under the same license as the Plugins - Imsanity - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2016-12-24 11:15:09+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: GlotPress/2.3.0-alpha\n"
+"Language: fr\n"
+"Project-Id-Version: Plugins - Imsanity - Stable (latest release)\n"
+
+#. Author URI of the plugin/theme
+msgid "https://ewww.io/"
+msgstr "https://ewww.io/"
+
+#. Author of the plugin/theme
+msgid "Shane Bishop"
+msgstr "Shane Bishop"
+
+#. Description of the plugin/theme
+msgid "Imsanity stops insanely huge image uploads"
+msgstr "Insanity réduit incroyablement les énormes ajouts d’images"
+
+#. Plugin URI of the plugin/theme
+msgid "https://wordpress.org/plugins/imsanity/"
+msgstr "https://fr.wordpress.org/plugins/imsanity/"
+
+#. Plugin Name of the plugin/theme
+msgid "Imsanity"
+msgstr "Imsanity"
+
+#: settings.php:628
+msgid "Save Changes"
+msgstr "Enregistrer les modifications"
+
+#: settings.php:619
+msgid "Convert PNG To JPG"
+msgstr "Convertir PNG en JPG"
+
+#: settings.php:611
+msgid "Convert BMP To JPG"
+msgstr "Convertir BMP en JPG"
+
+#: settings.php:564
+msgid "Imsanity settings have been configured by the server administrator. There are no site-specific settings available."
+msgstr "Les paramètres d'Imsanity ont été configurés par l'administrateur du serveur. Il n'y a aucun paramètre spécifique disponible pour ce site."
+
+#: settings.php:547
+msgid "Search Images..."
+msgstr "Recherche d'images..."
+
+#: settings.php:540
+msgid ""
+"It is <strong>HIGHLY</strong> recommended that you backup \n"
+"\t\tyour wp-content/uploads folder before proceeding.  You will have a chance to preview and select the images to convert.\n"
+"\t\tIt is also recommended that you initially select only 1 or 2 images and verify that everything is ok before\n"
+"\t\tprocessing your entire library.  You have been warned!"
+msgstr "Il est <strong>FORTEMENT</strong> recommandé de sauvegarder votre dossier wp-content/uploads avant de continuer. Vous aurez la possibilité de prévisualiser et de sélectionner les images à convertir. Il est également recommandé que vous sélectionniez d’abord seulement 1 ou 2 images et vérifiez que tout est OK avant de traiter l’ensemble de votre bibliothèque. Vous voilà averti !"
+
+#: settings.php:538
+msgid "WARNING: BULK RESIZE WILL ALTER YOUR ORIGINAL IMAGES AND CANNOT BE UNDONE!"
+msgstr "AVERTISSEMENT: resize EN VRAC modifier votre images originales et ne peut être annulée!"
+
+#: settings.php:527
+msgid "Bulk Resize Images"
+msgstr "Redimensionner les images en lots"
+
+#: settings.php:509
+msgid "Imsanity Settings"
+msgstr "Paramètres Imsanity"
+
+#: settings.php:279
+msgid "Update Settings"
+msgstr "Mettre à jour les réglages"
+
+#: settings.php:274 settings.php:607
+msgid "WordPress default is 82"
+msgstr "Par défaut WordPress est 82"
+
+#: settings.php:273 settings.php:606
+msgid "Valid values are 1-100."
+msgstr "Les valeurs valides sont 1-100."
+
+#: settings.php:272 settings.php:605
+msgid "JPG image quality"
+msgstr "Qualité d'image JPEG"
+
+#: settings.php:264
+msgid "Convert PNG to JPG"
+msgstr "Convertir PNG en JPG"
+
+#: settings.php:259 settings.php:267 settings.php:614 settings.php:622
+msgid "No"
+msgstr "Non"
+
+#: settings.php:258 settings.php:266 settings.php:613 settings.php:621
+msgid "Yes"
+msgstr "Oui "
+
+#: settings.php:256
+msgid "Convert BMP to JPG"
+msgstr "Convertir BMP en JPG"
+
+#: settings.php:248 settings.php:597
+msgid "Images uploaded elsewhere (Theme headers, backgrounds, logos, etc)"
+msgstr "Largeur/hauteur max pour les images téléchargées ailleurs (en-têtes des thèmes, des arrière-plans, logos, etc)"
+
+#: settings.php:240 settings.php:590
+msgid "Images uploaded directly to the Media Library"
+msgstr "Largeur/hauteur max pour les images téléchargées directement dans la bibliothèque"
+
+#: settings.php:235 settings.php:243 settings.php:251 settings.php:585
+#: settings.php:592 settings.php:599
+msgid " (or enter 0 to disable)"
+msgstr "(Entrez 0 pour désactiver)"
+
+#: settings.php:232 settings.php:583
+msgid "Images uploaded within a Page/Post"
+msgstr "Largeur/hauteur max pour les images téléchargées dans une page ou un commentaire"
+
+#: settings.php:226
+msgid "Use global Imsanity settings (below) for all sites"
+msgstr "Utiliser les paramètres globaux (ci-dessous) pour tous les sites"
+
+#: settings.php:225
+msgid "Allow each site to configure Imsanity settings"
+msgstr "Permettre à chaque site de configurer les paramètres d'Imsanity"
+
+#: settings.php:222
+msgid "Global Settings Override"
+msgstr "Verrouillage des paramètres globaux"
+
+#: settings.php:208
+msgid "Imsanity network settings saved."
+msgstr "Configuration globale d'Imsanity enregistrée."
+
+#: settings.php:188 settings.php:201
+msgid "Imsanity Network Settings"
+msgstr "Configuration globale d'Imsanity"
+
+#: settings.php:40
+msgid "Imsanity Plugin Settings"
+msgstr "Configuration du plugin Imsanity"
+
+#: libs/imagecreatefrombmp.php:129
+msgid "imagecreatefrombmp: %s has %d bits and this is not supported!"
+msgstr "imagecreatefrombmp: %s a %d bits ceci n\\'est pas supporté !"
+
+#: libs/imagecreatefrombmp.php:43
+msgid "imagecreatefrombmp: Can not obtain filesize of %s !"
+msgstr "imagecreatefrombmp: Ne peut obtenir la taille de %s !"
+
+#: libs/imagecreatefrombmp.php:21
+msgid "imagecreatefrombmp: %s is not a bitmap!"
+msgstr "imagecreatefrombmp: %s n’est pas une bitmap !"
+
+#: libs/imagecreatefrombmp.php:14
+msgid "imagecreatefrombmp: Can not open %s!"
+msgstr "imagecreatefrombmp: Ne peut pas ouvrir %s !"
+
+#: ajax.php:185
+msgid "ERROR: (Attachment with ID of %s not found) "
+msgstr "ERREUR : (La pièce jointe avec l’ID %s n’a pas été trouvé) "
+
+#: ajax.php:179
+msgid "SKIPPED: %s (Resize not required)"
+msgstr "SAUTÉ : %s (Redimensionnement non requis)"
+
+#: ajax.php:174
+msgid "ERROR: %s (%s)"
+msgstr "ERREUR : %s (%s)"
+
+#: ajax.php:170
+msgid "OK: %s"
+msgstr "OK : %s"
+
+#: ajax.php:98
+msgid "Missing ID Parameter"
+msgstr "Paramètre ID manquant"

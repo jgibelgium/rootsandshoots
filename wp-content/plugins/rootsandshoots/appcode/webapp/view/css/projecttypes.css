@@ -1,0 +1,50 @@
+#projectTypesTable {
+    position: relative;
+    width: 100%;/*van de container*/
+    height: auto;
+    overflow: auto;/*If overflow is clipped, a scroll-bar should be added to see the rest of the content*/
+    margin: 0 auto 16px;
+    
+}
+
+
+#projectTypesTable thead th {
+    height: 32px;
+    /*font-weight: bold niet nodig; HTML5 zorgt hier wellicht reeds voor*/
+    text-align: left; /*HTML5 centreert*/
+    vertical-align: middle;
+    padding-left: 0.5em;
+
+}
+
+#projectTypesTable tbody td {
+    height: 32px;
+    font-size: 16px;
+    line-height: 20px;
+    vertical-align: middle;
+    padding-left: 0.5em;
+}
+
+
+.rs_projecttypeid {
+    width: 5%;
+}
+
+.rs_action {
+    width: 15%; /*vaste kolombreedte vermijdt variabele breedte calculatie*/
+}
+
+#warningDeletion {
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+

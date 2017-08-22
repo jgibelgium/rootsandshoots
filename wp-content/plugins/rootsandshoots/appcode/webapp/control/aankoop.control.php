@@ -1,0 +1,219 @@
+<?php
+include('../../helpers/feedback.class.php');    
+include('../../helpers/base.class.php');
+include('../model/doc.class.php');
+include('../model/transactie.class.php'); 
+include('../model/transactiedoc.class.php');
+include('../model/transactiepartner.class.php'); 
+include('../help/class.phpmailer.php');
+include('../help/class.smtp.php');
+include('../model/lid.class.php'); 
+
+session_start();
+
+//toevoegen
+if(isset($_POST['btnKoop']))
+{
+        //tabel Transactie
+        $taObject = new Transactie();
+        //nederlandse instellingen voor de tijd
+        setlocale(LC_TIME, ""); //onvermijdelijk nodig
+        setlocale(LC_TIME, "nl_NL");
+        $TADatum = date('Y-m-d', time());
+        echo $TADatum;
+
+        $taObject->setTADatum($TADatum);
+        $taObject->setOrderBedrag($_POST['orderBedrag']);
+        if($_POST['tpt'] == 'send')
+        { $taObject->setTransportKost($_POST['transportKost']); }
+        else{ $taObject->setTransportKost(NULL); }
+        echo "transportkost: ".$_POST['transportKost'];
+       
+        $taObject->setDueDate(NULL);
+        $taObject->setDatumUit(NULL);
+        $taObject->setDatumTerug(NULL);
+        $taObject->setTransactieTypeId(1);//deal
+        $taObject->setDealStatusId(1);//voorstel
+        $taObject->setExchangeStatusId(NULL);
+        $taObject->setAddedBy($_SESSION['username']);
+        $taObject->insert();
+        $nieuwTAId = $taObject->getTransactieId();
+
+        //tabel TransactieDoc
+        $tdObject = new TransactieDoc();
+        //itereren over de aangevinkte checkboxen: $_POST['selector'] is een numerieke, ééndim array van value van de checkboxen, hier docId
+
+        $aantalDocs = count($_POST['selector']);//nodig voor TransactieDoc
+        for($i = 0; $i < $aantalDocs; $i++)
+        {
+            $tdObject->setTransactieId($nieuwTAId);
+            $tdObject->setDocId($_POST['selector'][$i]);
+            $tdObject->setAddedBy($_SESSION['username']);
+            $tdObject->insert();
+        }
+
+        //tabel TransactiePartner
+        //1. koper
+        $tpObject1 = new TransactiePartner();
+        $tpObject1->setTransactieId($nieuwTAId);
+        $tpObject1->setRolId(3);//koper
+        $tpObject1->setLidId($_SESSION['lidid']);
+        //setDelStatus() is niet nodig; zit vervat in insert
+        $tpObject1->setAddedBy($_SESSION['username']);
+        $tpObject1->insert();
+
+        //2. verkoper
+        $tpObject2 = new TransactiePartner();
+        $tpObject2->setTransactieId($nieuwTAId);
+        $tpObject2->setRolId(4);//verkoper
+        $tpObject2->setLidId($_POST['verkoperid']);//grote letter lukt niet in een index van $_POST
+        //setDelStatus() is niet nodig; zit vervat in insert
+        $tpObject2->setAddedBy($_SESSION['username']);
+        $tpObject2->insert();
+
+        //aanpassing tabel Doc gebeurt pas bij goedkeuring
+
+        //mail verzenden
+        $mail = new PHPMailer();
+        //1. connectie properties gmail
+        // $mail->isSMTP();//vergt class.smtp.php
+        // $mail->SMTPDebug = 2;/*sets the debugging on; niet nodig in productie*/
+        // $mail->Host = 'smtp.gmail.com';
+        // $mail->SMTPAuth = TRUE;   // Enable SMTP authentication; wellicht na registratie op de SMTP server
+        // $mail->Username = 'ron68be@gmail.com';//SMTP username? http://email.about.com/od/accessinggmail/f/Gmail_SMTP_Settings.htm
+        // $mail->Password = 'ron7zq01%'; //SMTP wachtwoord bij Google
+        // $mail->SMTPSecure = 'ssl';//beveiligingstype
+        // $mail->Port = 465;//dezelfde poort bij Google en ovh.net
+        // $emailAdresAdmin = 'ron68be@gmail.com';
+
+        //1.connectie properties ovh
+        $mail->isSMTP();//vergt class.smtp.php
+        $mail->SMTPDebug = 2;/*sets the debugging on; niet nodig in productie*/
+        $mail->Host = 'ssl0.ovh.net'; // beveiligde SMTP server bij ovh.net
+        $mail->SMTPAuth = TRUE;   // Enable SMTP authentication; wellicht na registratie op de SMTP server
+        $mail->Username = 'postmaster@rfewebsites.be';
+        $mail->Password = 'dlanor12'; //SMTP wachtwoord bij ovh.net
+        $mail->SMTPSecure = 'ssl';//beveiligingstype
+        $mail->Port = 465;//dezelfde poort bij Google en ovh.net
+        $emailAdresAdmin = 'postmaster@rfewebsites.be';
+
+        //2.email en naam van verzender
+        if($_SESSION['lidstatus'] == 2)
+        {
+        $mail->From = $emailAdresAdmin;
+        $mail->FromName = 'Beheerder vzw Onder Ons Lezen';
+        $mail->addReplyTo($emailAdresAdmin);    
+        }
+        elseif($_SESSION['lidstatus'] == 1){
+        //e-mail adres en naam van lid ophalen
+        $lidObject = new Lid();
+        $lidObject->setLidId($_SESSION['lidid']);//altijd kleine letters voor superglobal variabelen
+        $lidObject->selectLidById();
+        $emailVerzender = $lidObject->getEmail();
+        echo $emailVerzender;
+        $voornaamVerzender = $lidObject->getLidVoornaam();
+        echo $voornaamVerzender;
+        $naamVerzender = $lidObject->getLidNaam();
+        echo $naamVerzender;
+        $mail->From = $emailVerzender;//ondanks assignatie verschijnt er hier helaas ron68be@gmail.com in het bericht bij de bestemmeling; niet toevoegen vult ook hetzelfde in
+        $mail->FromName =  $voornaamVerzender." ".$naamVerzender;
+        $mail->addReplyTo($emailVerzender, $voornaamVerzender." ".$naamVerzender);
+        }
+   
+        //3.e-mail adres en naam van bestemmeling ophalen
+        $lidObject1 = new Lid();
+        $lidObject1->setLidId($_POST['verkoperid']);
+        $lidObject1->selectLidById();
+        $emailOntvanger = $lidObject1->getEmail();
+        $voornaamOntvanger = $lidObject1->getLidVoornaam();
+        $naamOntvanger = $lidObject1->getLidNaam();
+    
+        $mail->AddAddress($emailOntvanger, $voornaamOntvanger." ".$naamOntvanger);
+        $mail->WordWrap = 50;
+        $mail->Subject = "Voorstel tot aankoop";
+        $mail->Body = "Beste, Ik wens enkele van uw documenten te kopen. Gelieve u aan te melden
+        op de website van vzw Onder Ons Lezen om deze deal al dan niet te bevstigen.\n".$voornaamVerzender. " ".$naamVerzender;
+        $mail->isHTML(TRUE); 
+      
+        if($mail->Send())
+        {
+            $message = "De verkoper is succesvol bericht over uw aankoop voorstel.";
+        } 
+        else
+        {
+            $message = "De mail is niet succesvol verzonden naar de verkoper.: ". $mail->ErrorInfo."\n"."Contacteer de administrator.";
+        }
+        $_SESSION['mailmessagedeal'] = $message;
+        header('Location: ../view/start_aankoop.php');
+}
+
+
+
+
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+    </head>
+    <body>
+        
+        <p>insert ta</p>
+        <ul>
+            <li>Message: <?php echo $taObject->getFeedback(); ?></li>
+            <li>Error message: <?php echo $taObject->getErrorMessage(); ?></li>
+            <li>Error code: <?php echo $taObject->getErrorCode(); ?></li>
+            <li>ID: <?php echo $taObject->getTransactieId(); ?></li>
+        </ul>
+        
+        <p>laatste insert tdoc</p>
+        <ul>
+            <li>Message: <?php echo $tdObject->getFeedback(); ?></li>
+            <li>Error message: <?php echo $tdObject->getErrorMessage(); ?></li>
+            <li>Error code: <?php echo $tdObject->getErrorCode(); ?></li>
+            <li>ID: <?php echo $tdObject->getTDId(); ?></li>
+        </ul>
+
+        <p>insert tpartner koper</p>
+        <ul>
+            <li>Message: <?php echo $tpObject1->getFeedback(); ?></li>
+            <li>Error message: <?php echo $tpObject1->getErrorMessage(); ?></li>
+            <li>Error code: <?php echo $tpObject1->getErrorCode(); ?></li>
+            <li>ID: <?php echo $tpObject1->getTPId(); ?></li>
+        </ul>
+
+        <p>insert tpartner verkoper</p>
+        <ul>
+            <li>Message: <?php echo $tpObject2->getFeedback(); ?></li>
+            <li>Error message: <?php echo $tpObject2->getErrorMessage(); ?></li>
+            <li>Error code: <?php echo $tpObject2->getErrorCode(); ?></li>
+            <li>ID: <?php echo $tpObject2->getTPId(); ?></li>
+        </ul>
+
+        <p>mail verzenden: <?php echo $message;?></p>
+
+
+        <!--
+        <p>Test delete doc</p>
+        <ul>
+            <li>Message: <?php echo $objectD->getFeedback(); ?></li>
+            <li>Error message: <?php echo $objectD->getErrorMessage(); ?></li>
+            <li>Error code: <?php echo $objectD->getErrorCode(); ?></li>
+        </ul>
+        -->
+       
+        <!--
+        <p>Test update doc</p>
+        <ul>
+            <li>Message: <?php echo $objectU->getFeedback(); ?></li>
+            <li>Error message: <?php echo $objectU->getErrorMessage(); ?></li>
+            <li>Error code: <?php echo $objectU->getErrorCode(); ?></li>
+        </ul>
+        -->
+        
+    </body>
+</html>
+
+

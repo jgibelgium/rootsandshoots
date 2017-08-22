@@ -1,0 +1,15 @@
+
+.foutmelding {
+    padding: 16px 0 0 8px;
+    color: #d00;/*rood*/
+}
+
+.foutveld {
+    background-color: #ff0;/*geel*/
+}
+
+#warningFrm {
+    display: none;
+}
+
+

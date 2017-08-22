@@ -1,0 +1,121 @@
+/*
+Theme Name: flexible child
+Template: flexible
+Author: RE
+Version: 1.0
+*/
+
+@import url("../flexible/style.css");
+body {    padding-top: 0;}
+#et-login {    display: none;}
+
+/*HEADER*//*2. language menu*/#menu-top {    font-size: 12px;    margin-bottom: 0;/*overrides bootstrap*/}#menu-top li {    display: inline-block; } #menu-top a {    display: block;    line-height: 36px; }/*vertical line between menu items*/  #menu-top a .menu-item-text {      padding: 0 0.5em;      border-right: solid 1px #fff;  }  /*no vertical line right of last menu item*/  #menu-top li:last-child a .menu-item-text {      padding-right: 0.9em;      border: 0; } #menu-top li:hover {    background-color: #A1CA3A;    box-shadow: -2px 0 0 #A1CA3A; } #menu-top a:hover {    text-decoration: none;    color: #FFF !important; }  #menu-top li.current-lang a {     color: #fe504f !important; }   #menu-top li.current-lang:hover a {     color: #fff !important; }   #menu-register-menu-en {    font-size: 12px;    margin-bottom: 0;/*overrides bootstrap*/}#menu-register-menu-en li {    display: inline-block; } #menu-register-menu-en a {    display: block;    line-height: 36px; }/*vertical line between menu items*/  #menu-register-menu-en a .menu-item-text {      padding: 0 0.5em;      border-right: solid 1px #fff;  }  /*no vertical line right of last menu item*/  #menu-register-menu-en li:last-child a .menu-item-text {      padding-right: 0.9em;      border: 0; } #menu-register-menu-en li:hover {    background-color: #A1CA3A;    box-shadow: -2px 0 0 #A1CA3A; } #menu-register-menu-en a:hover {    text-decoration: none;    color: #FFF !important; }  #menu-register-menu-en li.current-lang a {     color: #fe504f !important; }   #menu-register-menu-en li.current-lang:hover a {     color: #fff !important; }    
+.menu-top-container {    float: left;}.menu-register-menu-en-container {    float: right;}
+.breadcrumb {
+display: none;
+}
+
+.tagline {
+padding: 0;
+text-align: left;
+}
+
+#languages {
+display: none;
+}
+
+/*BODY*/
+
+p {text-align: justify;}
+
+#projectsfromworld {
+width: 100%;
+height: 1300px;
+}
+
+.pdficon {
+-webkit-transition: opacity 0.2s ease;
+transition: opacity 0.2s ease;
+}
+
+.pdficon:hover {opacity: 0.75;}
+
+.col2, .col3 {text-align: left;}
+
+.flagsTable td{
+    padding: 0.5em;
+    border: 0;
+}
+
+.flagsTable td:first-child {
+    padding-left: 0;
+}
+
+.flagsTable td:last-child {
+    padding-right: 0;
+}
+
+.customquote {
+    background: #fdf9e1;
+    border: 1px solid rgb(238, 238, 238);
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 1px 1px 2px 0 rgb(191, 162, 111);
+    padding: 10px;
+}
+
+
+/*SUBFOOTER*/
+#text-2 {
+height: 354px;
+}
+
+/*FOOTER*/
+
+
+/*SIDEBAR*/
+
+
+
+
+/*DEFAULT SCREENS and TABLETS in LANDSCAPE*/
+@media screen and (max-width: 1024px) and (min-width: 768px) and (orientation: landscape){
+
+} /*end DEFAULTS SCREENS and TABLETS in LANDSCAPE*/
+
+
+
+/*SMARTPHONES and TABLETS in PORTRAIT*/
+@media screen and (max-width: 800px) {
+
+} /*end SMARTPHONES and TABLETS in PORTRAIT*/
+
+
+
+/*SMALL SMARTPHONES*/
+@media screen and (max-width: 480px) {
+
+.flagsTable {display: block;}
+.flagsTable tbody {display: block;}
+.flagsTable tr {display: block;}
+.flagsTable td {display: block; margin: 0 10%; padding: 0.5em 0;}
+
+.flagsTable tbody tr {border: none !important;}
+
+} /*end SMALL SMARTPHONES*/
+
+
+
+/*PRINT*/
+@media print {
+
+}
+
+
+
+/*5:4 SCREENS*/
+@media only screen and (max-width: 1280px) and (max-height: 1024px) 
+{    
+
+} /*end 5:4 screens*/
+
+

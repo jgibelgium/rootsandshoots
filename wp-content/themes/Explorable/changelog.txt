@@ -1,0 +1,206 @@
+version 1.9.8 ( updated 12-06-2016 )
+- Fixed ePanel font issues in WordPress 4.6
+    * core/admin/css/core.css
+    * core/functions.php
+    * epanel/core_functions.php
+    * epanel/css/panel.css
+- Added support for WordPress 4.7's new Custom CSS setting in the Theme Customizer. This will now be synced with the Custom CSS area in the Theme Options and can be edited using either interface.
+    * epanel/core_functions.php
+    * epanel/custom_functions.php
+- Fixed the bug with lowercase theme name, preventing a theme to update correctly, when an update is being performed via Themes page
+    * epanel/custom_functions.php
+- Fixed updates issues on some sites
+    * core/admin/includes/class-updates.php
+- Theme Options: Fixed the issue with Reset button, not working properly
+    * epanel/core_functions.php
+- Theme Options: Added RTL support
+    * epanel/css/panel.css
+- Bumped version number
+    * style.css
+
+version 1.9.7 ( updated 07-23-2016 )
+- Added "Google API Key" setting
+	* functions.php
+	* options_explorable.php
+	* epanel/custom_functions.php
+- Bumped version number
+	* style.css
+
+version 1.9.6 ( updated 06-20-2016 )
+- Fixed some inconsistencies with ePanel integration
+	* epanel/core_functions.php
+	* epanel/custom_functions.php
+- Bumped version number
+	* style.css
+
+version 1.9.5 ( updated 05-06-2016 )
+- Updated ePanel styles
+	* epanel/
+	* core/
+- Replaced outdated Fancybox with Magnific Popup plugin
+	* includes/page_templates/js/magnific_popup/
+	* includes/page_templates/js/magnific_popup/et-ptemplates-frontend.js
+	* page-template-portfolio.php
+- Fixed the issue with preview of Link color option in Customizer
+	* js/theme-customizer.js
+- Fixed the conflict of google maps script with google maps from Divi Builder
+	* functions.php
+- Bumped version number
+	* style.css
+
+version 1.9.4 ( updated 12-12-2015 )
+- Fixed the issue with SEO titles, not working in ePanel
+	* epanel/custom_functions.php
+- Fixed the issue with a site title, appended to breadcrumbs
+	* includes/breadcrumbs.php
+- Bumped version number
+	* style.css
+
+version 1.9.3 ( updated 10-23-2015 )
+- Fixed the issue with deprecated wp_title function in WordPress 4.4
+	* header.php
+	* functions.php
+	* epanel/custom_functions.php
+	* includes/breadcrumbs.php
+- Bumped version number
+	* style.css
+
+version 1.9.2 ( updated 10-21-2015 )
+- Added sanitization to Customizer settings
+	* functions.php
+	* includes/functions/sanitization.php
+- Bumped version number
+	* style.css
+
+version 1.9.1 ( updated 08-18-2015 )
+- Fixed issue with WordPress 4.3 that caused shortened post titles and excerpts to not be truncated correctly
+	* epanel/custom_functions.php
+- Fixed WP_Widget class constructor warning message
+	* includes/widgets/widget-about.php
+	* includes/widgets/widget-ads.php
+	* includes/widgets/widget-adsense.php
+- Bumped version number
+	* style.css
+
+version 1.9 ( updated 04-23-2015 )
+- Added minor security hardening
+	* epanel/custom_functions.php
+	* functions.php
+- Bumped version number
+	* style.css
+
+version 1.8 ( updated 04-17-2014 )
+- Fixed the issue with ET Settings Upload button, breaking WYSIWYG editor in WordPress 3.9
+	* functions.php
+	* js/admin_custom_uploader.js
+- Bumped version number
+	* style.css
+
+version 1.7 ( updated 02-25-2014 )
+- Fixed the issue with slashes added to Name, Subject and Message fields in the contact form
+	* page-contact.php
+- Fixed the issue with resizing of images that have the x symbol between width and height values in the filename
+- Fixed the issue with .jpeg images and uppercase extensions in cached files
+- The theme doesn't strip slashes from custom css now, when saving the option to the database
+- Removed buzz shortcode ( Google retired Buzz )
+- Fixed ePanel SEO home options not appearing on static front page
+- Better compatibility with WordPress SEO and All In One SEO Pack plugins. ePanel SEO is disabled if these plugins are active now.
+	* epanel/core_functions.php
+	* epanel/custom_functions.php
+	* epanel/shortcodes/shortcodes.php
+- Fixed issue with filter bar on no results page
+- Fixed code formatting
+	* archive-listing.php
+- Disabled scrolling of the map on mobile devices
+	* functions.php
+- Added Listings to the sample data
+	* sampledata/sample.xml
+- Increased the map height on homepage for mobile devices
+- Fixed issue with Toggle button text color
+- Fixed 'Toggle List View' link hover effect
+- Bumped version number
+	* style.css
+
+version 1.6 ( updated 12-23-2013 )
+- Now you can update Elegant Themes in the Dashboard: https://www.elegantthemes.com/members-area/documentation.html#updater
+	* epanel/custom_functions.php
+- Bumped version number
+	* style.css
+
+version 1.5 ( updated 09-13-2013 )
+- Fixed issue with titles on index page
+	* includes/entry.php
+- Fixed Tabs shortcode layout issues with the slide effect
+	* epanel/shortcodes/css/shortcodes.css
+	* epanel/shortcodes/shortcodes.php
+- Bumped version number
+	* style.css
+
+version 1.4 ( updated 08-02-2013 )
+- Fixed separate_comments function notice
+	* epanel/custom_functions.php
+- Bumped version number
+	* style.css
+
+version 1.3 ( 06-26-2013 )
+- Fixed validation issues
+	* header.php
+- Fixed issue with single quote on homepage and single post pages
+	* includes/fullwidth_map.php
+	* single-listing.php
+- Added Map Type and Homepage Map Zoom Level options
+	* epanel/options_explorable.php
+	* includes/fullwidth_map.php
+- Fixed Google Map copyright position
+	* style.css
+- Fixed Post/Page Editor Word Count Problem
+- Fixed issue with left tabs shortcode
+- Fixed tooltip glitch
+- Fixed issue with span in pricing table
+- Fixed get_current_theme warning message.
+- Fixed the issue with Fancybox videos not working on second launch in WordPress 3.6
+- Added shortcodes names to shortcode_atts() to enable filtering
+
+List of modified files:
+* epanel/custom_functions.php
+* epanel/page_templates/js/et-ptemplates-frontend.js
+* epanel/page_templates/js/fancybox/jquery.fancybox-1.3.4.pack.js
+* epanel/shortcodes/css/shortcodes.css
+* epanel/shortcodes/js/et_shortcodes_frontend.js
+* epanel/shortcodes/js/et_shortcodes_frontend.dev.js
+* epanel/shortcodes/shortcodes.php
+
+version 1.2 ( 05-15-2013 )
+- Added premade colorschemes to customizer
+- Changed et_filter_text class to avoid issues with font options
+	* style.css
+	* epanel/google-fonts/et_google_fonts.js
+	* fullwidth_map.php
+
+version 1.1 ( 05-02-2013 )
+- Fixed 'Default map position' bug
+- Added readme.url file
+- Fixed notification messages in WP-Admin
+- Added 'Google Maps Default Zoom Level' option to ePanel
+- Integrated Google Fonts options into Customizer
+
+List of modified files:
+epanel/custom_functions.php
+epanel/google-fonts/et_google_fonts.css
+epanel/google-fonts/et_google_fonts.js
+epanel/google-fonts/images/all-fonts.png
+epanel/options_explorable.php
+functions.php
+includes/fullwidth_map.php
+lang/de_DE.mo
+lang/de_DE.po
+lang/en_US.mo
+lang/en_US.po
+lang/ru_RU.mo
+lang/ru_RU.po
+readme.url
+single-listing.php
+
+version 1.0 ( 04-01-2013 )
+
+- initial release

@@ -1,0 +1,46 @@
+#docKenmerkTabel {
+    margin-left: 30%;
+    width: 40%;
+    background-color: transparent;
+    border-color: #000;
+    border-style: solid;
+    border-width: 1px;
+    padding-top: 16px;
+    
+}
+
+#docKenmerkTabel thead th {
+    height: 32px;
+    text-align: left; /*HTML5 centreert*/
+}
+
+#docKenmerkTabel tbody td {
+   height: 20px;
+}
+
+#docKenmerkTabel tbody td input {
+     width: 206px;
+     padding: 4px 6px;
+     /*vertical align niet nodig in een tabelcel*/
+     color: #555555;
+     font-size: 16px;
+     border: 1px solid #cccccc;
+     border-radius: 4px;
+     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.75);/*inset: wekt indruk dat box achter canvas staat*/
+     /*transition: werkt niet in een tabelcel*/
+     
+}
+
+#laatstecel {
+    text-align: center;
+}
+
+/*enkel nodig voor de <th> tag*/
+.docKenmerkTabelIdCel {
+    display: none;
+}
+
+.warning {
+    background-color: #b6ff00;
+}
+

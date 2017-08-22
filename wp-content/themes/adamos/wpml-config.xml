@@ -1,0 +1,26 @@
+<wpml-config>
+  <admin-texts>
+    <key name="theme_mods_adamos">
+      <key name="0"/>
+      <key name="nav_menu_locations">
+        <key name="primary"/>
+      </key>
+      <key name="header_textcolor"/>
+      <key name="background_color"/>
+      <key name="background_image"/>
+      <key name="background_repeat"/>
+      <key name="background_position_x"/>
+      <key name="background_attachment"/>
+      <key name="adamos_logo"/>
+      <key name="featured_textbox"/>
+      <key name="featured_textbox_text"/>
+      <key name="header_one_url"/>
+      <key name="featured_textbox_header_one"/>
+      <key name="featured_textbox_text_one"/>
+      <key name="featured_textbox_header_two"/>
+      <key name="featured_textbox_text_two"/>
+      <key name="featured_textbox_header_three"/>
+      <key name="featured_textbox_text_three"/>
+    </key>
+  </admin-texts>
+</wpml-config>

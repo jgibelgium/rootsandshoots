@@ -1,0 +1,61 @@
+#frmMemberAge {
+  border-radius: 25px;
+  text-align: center; 
+}
+
+.rs_question {
+   font-size: 25px;
+   font-weight: bold; 
+}
+
+.mafradio {
+    height: 2em;
+    margin-left: 3em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.mafradio label {
+  position: relative;
+  font-size: 20px;
+  font-weight: bold; 
+}
+
+.mafradio span::before,
+.mafradio span::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.mafradio span.radio:hover {
+  cursor: pointer;
+}
+
+.mafradio span.radio::before {
+  left: -52px;
+  width: 45px;
+  height: 25px;
+  background-color: #A8AAC1;
+  border-radius: 50px;
+}
+.mafradio span.radio::after {
+  left: -49px;
+  width: 17px;
+  height: 17px;
+  border-radius: 10px;
+  background-color: #6C788A;
+  transition: left .25s, background-color .25s;
+}
+
+input[type="radio"]:checked + label span.radio::after {
+  left: -27px;
+  background-color: #EBFF43;
+}
+
+input[type=radio] {
+  -webkit-appearance: none;
+}
+

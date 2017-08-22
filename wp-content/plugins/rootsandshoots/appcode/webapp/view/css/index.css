@@ -1,0 +1,93 @@
+.containerIndex {
+    width: 90%;
+    height: 100%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    margin: 0 auto;
+    background-color: transparent;
+}
+
+.tile {
+    border-top: 1em solid #fff;
+    border-right: 1em solid #fff;
+    border-bottom: 1em solid #fff;
+    border-left: 1em solid #fff;
+    float: left;/*slaat op tile zelf en niet zijn inhoud*/
+    /*text-align: center;*/
+    background-color: transparent;
+}
+
+._1x2x2 {
+    width: 50%;
+    height: 50%;
+}
+
+.tile > p {
+    padding: 3px 10px 3px 10px;
+}
+
+
+img {
+    position: relative;
+    top:  10%;
+    left:  5%;
+}
+
+
+.form-horizontal {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    padding-top: 5%;
+}
+
+.control-group {
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 0;
+}
+
+.control-label {
+    cursor: pointer;
+    float: left;
+    width: 45%;
+    text-align: right;
+    text-transform: uppercase;
+    padding-top: 5px;
+    margin-bottom: 5px;
+    line-height: 20px;
+    color: #333333;
+}
+
+.controls {
+     font-size: 14px;
+     line-height: 20px;
+     margin-left: 50%;/*label zit in de linkermargin*/
+}
+
+.controls > input {
+    width: 50%;
+    padding: 4px 6px;
+    vertical-align: middle;
+    line-height: 20px;
+    color: #555555;
+    background-color: #fff;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.75);/*inset: wekt indruk dat box achter canvas staat*/
+    transition: border linear 0.2s, box-shadow linear 0.2s;
+    /*transition heeft 4 eign: property / duration / timing function / delay */
+}
+
+
+.message {
+    margin-left: 50%;
+    color: #f00;
+    background-color: transparent;
+    width: 50%;
+    vertical-align: middle;
+    padding-top: 8px;
+}
+
+
+

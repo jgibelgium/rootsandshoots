@@ -1,0 +1,53 @@
+#hdTabel {
+    position: relative;
+    width: 100%;/*van de container*/
+    height: auto;
+    overflow: auto;/*If overflow is clipped, a scroll-bar should be added to see the rest of the content*/
+    margin: 0 auto 16px;
+}
+
+
+#hdTabel thead th {
+    height: 32px;
+    /*font-weight: bold niet nodig; HTML5 zorgt hier wellicht reeds voor*/
+    text-align: left; /*HTML5 centreert*/
+}
+
+#hdTabel tbody td {
+    height: 32px;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+
+.Id {
+    width: 10%;
+}
+
+.Koper, .Verkoper, .Status {
+    width: 15%;
+}
+
+.Bedrag {
+    width: 10%;
+}
+
+.Actie {
+    width: 10%;
+}
+
+#mailMessage {
+    position: absolute;
+    left: 5%;
+    font-weight: bold;
+}
+
+form > input {
+    display: none;
+}
+
+
+
+
+
+

@@ -1,0 +1,177 @@
+/*
+Theme Name: Adamos-child
+Template: adamos
+Author: RE
+*/
+
+@import url("../adamos/style.css");
+
+/*GENERAL*/
+
+body {
+color: #333;
+font-size: 1.5em;
+font-family: 'Open Sans';
+}
+
+.site-main {
+max-width: 1400px;}
+
+table {
+border: 1px #333 solid;
+margin-top: 1em !important;
+}
+table td, table th {border: 1px #333 solid;}
+table tr {padding: 1.5em 0; height: 3em;}
+
+
+
+
+.rs_form_delete, .rs_form_edit {
+display: inline;
+margin-left: 5%;
+margin-right: 5%;
+}
+
+button {
+padding: 0 !important;
+}
+
+
+
+/*anchor tag als button weergeven*/
+.subscriptionbtn {
+color: #fff !important;
+background-color: #ff5000 !important;;
+//font-family: 'Open Sans' !important;;
+font-weight: 400 !important; 
+border-radius: 2px !important;;
+border: none !important;;
+text-shadow: none !important;;
+letter-spacing: 2px !important;
+width: auto !important;
+margin: 20px 0 !important;
+padding: 12px 15px !important;
+text-align: center !important;
+text-decoration: none !important;
+
+}
+
+.subscriptionbtn:hover {
+opacity: 0.75;
+}
+
+/*TAALMENU*/
+.menu-top {margin: 0}
+
+.menu-top li:first-child {margin-left: 0}
+
+.menu-top li {
+display: inline-block;
+padding: 0;
+margin: 0;
+list-style: none;
+}
+
+.menu-top li a {
+display: block;
+margin: 0;
+padding: 5px 10px;
+}
+
+.menu-item .menu-link {
+display: block;
+position: relative;
+line-height: 1.4;
+text-align: left;
+}
+
+a img {border: none;}
+
+
+
+
+
+/*HEADER*/
+
+.site-logo {
+padding-top: 1em;
+}
+
+#masthead-wrap {
+background: #fff;
+}
+
+.header_container {
+background: #fff;
+margin: 0 5%;
+max-width: 90%;
+}
+
+.main-navigation {
+padding-top: 30px;
+font-family: 'Open Sans', sans-serif;
+width: 50%;
+}
+
+/*CONTAINER*/
+
+.featuretext_top {
+display: none;
+}
+
+p {text-align: justify;}
+
+#projectsfromworld {
+width: 100%;
+height: 1300px;
+}
+
+/*SUBFOOTER*/
+#text-2 {
+height: 354px;
+}
+
+/*FOOTER*/
+
+
+/*SIDEBAR*/
+
+
+
+
+/*DEFAULT SCREENS and TABLETS in LANDSCAPE*/
+@media screen and (max-width: 1024px) and (min-width: 768px) and (orientation: landscape){
+
+} /*end DEFAULTS SCREENS and TABLETS in LANDSCAPE*/
+
+
+
+/*SMARTPHONES and TABLETS in PORTRAIT*/
+@media screen and (max-width: 800px) {
+
+} /*end SMARTPHONES and TABLETS in PORTRAIT*/
+
+
+
+/*SMALL SMARTPHONES*/
+@media screen and (max-width: 480px) {
+
+} /*end SMALL SMARTPHONES*/
+
+
+
+/*PRINT*/
+@media print {
+
+}
+
+
+
+/*5:4 SCREENS*/
+@media only screen and (max-width: 1280px) and (max-height: 1024px) 
+{    
+
+} /*end 5:4 screens*/
+
+
